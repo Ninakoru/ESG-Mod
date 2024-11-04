@@ -11,7 +11,7 @@
     -->
 
     <!-- ##### GALAXY GEN QUEST Spawn strategic resources in a way that is evenly distributed among constellations  #####-->
-    <QuestDefinition Name="StrategicResourceGenerationQuest" Category="GalaxyGeneration" SubCategory="ResourceNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+    <QuestDefinition Name="StrategicResourceGenerationQuest" Category="GalaxyGeneration" SubCategory="ResourceNormalization">
       <!--============ TAGS ============-->
       <Tags>StrategicResourceGenerationQuest</Tags>
       <!--============ CONTEXT ============-->
@@ -77,7 +77,7 @@
             <From Source="$Constellation0.$StarSystems">
               <Where>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Count>
@@ -87,7 +87,7 @@
             <From Source="$Constellation1.$StarSystems">
               <Where>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Count>
@@ -97,7 +97,7 @@
             <From Source="$Constellation2.$StarSystems">
               <Where>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Count>
@@ -107,7 +107,7 @@
             <From Source="$Constellation3.$StarSystems">
               <Where>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Count>
@@ -117,7 +117,7 @@
             <From Source="$Constellation4.$StarSystems">
               <Where>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Count>
@@ -157,7 +157,7 @@
 
         <!-- Calculate number of deposits to spawn for each resource -->
         <InterpretedVar VarName="$GalaxySize" Target="$(Empire)">
-          <Expression>Property(Context, @../ClassEmpire, GalaxySize, true)</Expression>
+          <Expression>Property(Context,@../ClassEmpire,GalaxySize,true)</Expression>
         </InterpretedVar>
         <InterpretedVar VarName="$C0StrategicT1Count">
           <Expression>Ceil((5 - (2.5 * $(Constellation0_RumpBoolean))) * $(GalaxySize) / $(ConstellationCount))</Expression>
@@ -211,7 +211,7 @@
             <From Source="$Constellation0.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -221,7 +221,7 @@
             <From Source="$Constellation0.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -231,7 +231,7 @@
             <From Source="$Constellation0.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -241,7 +241,7 @@
             <From Source="$Constellation0.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -251,7 +251,7 @@
             <From Source="$Constellation0.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -261,7 +261,7 @@
             <From Source="$Constellation0.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeSwamp,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -271,7 +271,7 @@
             <From Source="$Constellation1.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -281,7 +281,7 @@
             <From Source="$Constellation1.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -291,7 +291,7 @@
             <From Source="$Constellation1.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -301,7 +301,7 @@
             <From Source="$Constellation1.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -311,7 +311,7 @@
             <From Source="$Constellation1.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -321,7 +321,7 @@
             <From Source="$Constellation1.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeSwamp,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -331,7 +331,7 @@
             <From Source="$Constellation2.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -341,7 +341,7 @@
             <From Source="$Constellation2.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -351,7 +351,7 @@
             <From Source="$Constellation2.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -361,7 +361,7 @@
             <From Source="$Constellation2.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -371,7 +371,7 @@
             <From Source="$Constellation2.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -381,7 +381,7 @@
             <From Source="$Constellation2.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeSwamp,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -391,7 +391,7 @@
             <From Source="$Constellation3.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -401,7 +401,7 @@
             <From Source="$Constellation3.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -411,7 +411,7 @@
             <From Source="$Constellation3.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -421,7 +421,7 @@
             <From Source="$Constellation3.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -431,7 +431,7 @@
             <From Source="$Constellation3.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -441,7 +441,7 @@
             <From Source="$Constellation3.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeSwamp,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -451,7 +451,7 @@
             <From Source="$Constellation4.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -461,7 +461,7 @@
             <From Source="$Constellation4.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeBarren,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeAsh,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -471,7 +471,7 @@
             <From Source="$Constellation4.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -481,7 +481,7 @@
             <From Source="$Constellation4.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -491,7 +491,7 @@
             <From Source="$Constellation4.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -501,7 +501,7 @@
             <From Source="$Constellation4.$StarSystems.$Planets"> 
               <Where>
                 <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeSwamp,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
               </Where>
             </From>
           </Randomize>
@@ -701,7 +701,7 @@
 
 
   <!-- ##### GALAXY GEN QUEST Spawn strategic resources in a way that is evenly distributed among constellations  #####-->
-  <QuestDefinition Name="LuxuryResourceGenerationQuest" Category="GalaxyGeneration" SubCategory="ResourceNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+  <QuestDefinition Name="LuxuryResourceGenerationQuest" Category="GalaxyGeneration" SubCategory="ResourceNormalization">
     <!--============ TAGS ============-->
     <Tags>LuxuryResourceGenerationQuest</Tags>
     <!--============ CONTEXT ============-->
@@ -767,7 +767,7 @@
           <From Source="$Constellation0.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Count>
@@ -777,7 +777,7 @@
           <From Source="$Constellation1.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Count>
@@ -787,7 +787,7 @@
           <From Source="$Constellation2.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Count>
@@ -797,7 +797,7 @@
           <From Source="$Constellation3.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Count>
@@ -807,7 +807,7 @@
           <From Source="$Constellation4.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Count>
@@ -847,7 +847,7 @@
 
       <!-- Calculate number of deposits to spawn for each resource -->
       <InterpretedVar VarName="$GalaxySize" Target="$(Empire)">
-        <Expression>Property(Context, @../ClassEmpire, GalaxySize, true)</Expression>
+        <Expression>Property(Context,@../ClassEmpire,GalaxySize,true)</Expression>
       </InterpretedVar>
       <InterpretedVar VarName="$C0LuxuryT2v0Count">
         <Expression>Ceil((3 - (1.5 * $(Constellation0_RumpBoolean))) * $(GalaxySize))</Expression>
@@ -911,7 +911,7 @@
           <From Source="$Constellation0.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -921,7 +921,7 @@
           <From Source="$Constellation1.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -931,7 +931,7 @@
           <From Source="$Constellation2.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -941,7 +941,7 @@
           <From Source="$Constellation3.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -951,7 +951,7 @@
           <From Source="$Constellation4.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -961,7 +961,7 @@
           <From Source="$Constellation0.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -971,7 +971,7 @@
           <From Source="$Constellation1.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -981,7 +981,7 @@
           <From Source="$Constellation2.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -991,7 +991,7 @@
           <From Source="$Constellation3.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1001,7 +1001,7 @@
           <From Source="$Constellation4.$StarSystems.$Planets"> 
             <Where>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeGasBurning,!PlanetTypeGasHot,!PlanetTypeGasWarm,!PlanetTypeGasTemperate,!PlanetTypeGasCold,!PlanetTypeGasFrozen,!PlanetTypeSwamp,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1013,7 +1013,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeLifeform"/>
             <PathPrerequisite Flags="Prerequisite">PlanetTypeArctic</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
  <!--            <InterpreterPrerequisite Flags="Prerequisite">Property(Context, @'ClassPlanet', CuriositiesLevel4Count) gt 0</InterpreterPrerequisite>-->
           </Where>
         </From>
@@ -1023,7 +1023,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeRuins"/>
             <PathPrerequisite Flags="Prerequisite">PlanetTypeSwamp</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
           </Where>
         </From>
       </Var>
@@ -1032,7 +1032,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeRuins"/>
             <PathPrerequisite Flags="Prerequisite">PlanetTypeIce</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
           </Where>
         </From>
       </Var>
@@ -1041,7 +1041,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeLifeform"/>
             <PathPrerequisite Flags="Prerequisite">PlanetTypeDesert</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
           </Where>
         </From>
       </Var>
@@ -1050,7 +1050,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeUnderground"/>
             <PathPrerequisite Flags="Prerequisite">PlanetTypeBarren</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
           </Where>
         </From>
       </Var>
@@ -1059,7 +1059,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeLifeform"/>
             <PathPrerequisite Flags="Prerequisite">PlanetTypeLava</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
           </Where>
         </From>
       </Var>
@@ -1068,7 +1068,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeRuins"/>
             <PathPrerequisite Flags="Prerequisite">PlanetTypeAsh</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
           </Where>
         </From>
       </Var>
@@ -1077,7 +1077,7 @@
           <Where>
             <FilterPlanetByCuriosity FilteringOperation="None" DisplayedTypeVarName="CuriosityTypeLifeform"/>
             <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeSwamp,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
           </Where>
         </From>
       </Var>
@@ -1090,7 +1090,7 @@
             <Where>
               <IsNot EntityVarName="$T3R17Planets_Excluded"/>
               <PathPrerequisite Flags="Prerequisite">PlanetTypeArctic</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1101,7 +1101,7 @@
             <Where>
               <!--<IsNot EntityVarName="$T3R18Planets_Excluded"/>-->
               <PathPrerequisite Flags="Prerequisite">PlanetTypeSwamp</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1112,7 +1112,7 @@
             <Where>
               <!--<IsNot EntityVarName="$T3R19Planets_Excluded"/>-->
               <PathPrerequisite Flags="Prerequisite">PlanetTypeIce</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1123,7 +1123,7 @@
             <Where>
               <!--<IsNot EntityVarName="$T3R20Planets_Excluded"/>-->
               <PathPrerequisite Flags="Prerequisite">PlanetTypeDesert</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1134,7 +1134,7 @@
             <Where>
               <IsNot EntityVarName="$T3R21Planets_Excluded"/>
               <PathPrerequisite Flags="Prerequisite">PlanetTypeBarren</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1145,7 +1145,7 @@
             <Where>
               <IsNot EntityVarName="$T3R22Planets_Excluded"/>
               <PathPrerequisite Flags="Prerequisite">PlanetTypeLava</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1156,7 +1156,7 @@
             <Where>
               <IsNot EntityVarName="$T3R23Planets_Excluded"/>
               <PathPrerequisite Flags="Prerequisite">PlanetTypeAsh</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>
@@ -1167,7 +1167,7 @@
             <Where>
               <IsNot EntityVarName="$T3R24Planets_Excluded"/>
               <PathPrerequisite Flags="Prerequisite">!PlanetTypeIce,!PlanetTypeArctic,!PlanetTypeLava,!PlanetTypeDesert,!PlanetTypeSwamp,!PlanetTypeAsh,!PlanetTypeBarren,!PlanetTypeVeldt,!PlanetTypeSteppes,!PlanetTypeArid,!PlanetTypeSnow,!PlanetTypeMonsoon,!PlanetTypeOcean,!PlanetTypeTerran,!PlanetTypeForest,!PlanetTypeAtoll,!PlanetTypeTundra,!PlanetTypeTropical,!PlanetTypeJungle,!PlanetTypeBoreal,!PlanetTypeDestroyed</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem, QuestNode</PathPrerequisite> 
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">./ClassStarSystem,QuestNode</PathPrerequisite> 
             </Where>
           </From>
         </Randomize>

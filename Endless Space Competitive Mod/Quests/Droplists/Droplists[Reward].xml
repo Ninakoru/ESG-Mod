@@ -1471,5 +1471,22 @@
 	<String Value="HeroRemnant01"/>
 	<String Value="HeroPulsos01"/>
   </Droplist>
+
+  <!--Balanced Gen-->
+  <Droplist Name="DroplistRewardQuestBalancedGenFinished1">
+	<Unlock Name="EmpireImprovementBalancedGenCountFinished1" SimulationTag="CompletedQuestBalancedGenCountFinished1"/>
+  </Droplist>
+  <Droplist Name="DroplistRewardQuestBalancedGenFinished2">
+	<Unlock Name="EmpireImprovementBalancedGenCountFinished2" SimulationTag="CompletedQuestBalancedGenCountFinished2"/>
+  </Droplist>
+  <Droplist Name="DroplistRewardQuestBalancedGenFinished3">
+	<Unlock Name="EmpireImprovementBalancedGenCountFinished3" SimulationTag="CompletedQuestBalancedGenCountFinished3"/>
+  </Droplist>
+  <Droplist Name="DroplistRewardQuestBalancedGenFinished4">
+	<Unlock Name="EmpireImprovementBalancedGenCountFinished4" SimulationTag="CompletedQuestBalancedGenCountFinished4"/>
+  </Droplist>
+  <Droplist Name="DroplistRewardQuestBalancedGenFinished5">
+	<Unlock Name="EmpireImprovementBalancedGenCountFinished5" SimulationTag="CompletedQuestBalancedGenCountFinished5"/>
+  </Droplist>
   
 </Datatable>

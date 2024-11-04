@@ -433,4 +433,25 @@
     <TechnologyPrerequisite Flags="Prerequisite,Discard,Technology">TechnologyUniqueDefense1</TechnologyPrerequisite>
     <SimulationDescriptorReference Name="EmpireImprovementImproveStrategies3" />
   </EmpireImprovementDefinition>
+
+  <EmpireImprovementDefinition Name="EmpireImprovementBalancedGenCountFinished1" Category="CategoryEmpireImprovement" SubCategory="SubCategoryEmpire" >
+     <PathPrerequisite Inverted="false" Flags="Prerequisite,Discard">../ClassEmpire/ClassQuests,CompletedQuestBalancedGenCountFinished1</PathPrerequisite>
+    <SimulationDescriptorReference Name="EmpireImprovementBalancedGenCountFinished1" />
+  </EmpireImprovementDefinition>
+  <EmpireImprovementDefinition Name="EmpireImprovementBalancedGenCountFinished2" Category="CategoryEmpireImprovement" SubCategory="SubCategoryEmpire" >
+     <PathPrerequisite Inverted="false" Flags="Prerequisite,Discard">../ClassEmpire/ClassQuests,CompletedQuestBalancedGenCountFinished2</PathPrerequisite>
+    <SimulationDescriptorReference Name="EmpireImprovementBalancedGenCountFinished2" />
+  </EmpireImprovementDefinition>
+  <EmpireImprovementDefinition Name="EmpireImprovementBalancedGenCountFinished3" Category="CategoryEmpireImprovement" SubCategory="SubCategoryEmpire" >
+     <PathPrerequisite Inverted="false" Flags="Prerequisite,Discard">../ClassEmpire/ClassQuests,CompletedQuestBalancedGenCountFinished3</PathPrerequisite>
+    <SimulationDescriptorReference Name="EmpireImprovementBalancedGenCountFinished3" />
+  </EmpireImprovementDefinition>
+  <EmpireImprovementDefinition Name="EmpireImprovementBalancedGenCountFinished4" Category="CategoryEmpireImprovement" SubCategory="SubCategoryEmpire" >
+     <PathPrerequisite Inverted="false" Flags="Prerequisite,Discard">../ClassEmpire/ClassQuests,CompletedQuestBalancedGenCountFinished4</PathPrerequisite>
+    <SimulationDescriptorReference Name="EmpireImprovementBalancedGenCountFinished4" />
+  </EmpireImprovementDefinition>
+  <EmpireImprovementDefinition Name="EmpireImprovementBalancedGenCountFinished5" Category="CategoryEmpireImprovement" SubCategory="SubCategoryEmpire" >
+     <PathPrerequisite Inverted="false" Flags="Prerequisite,Discard">../ClassEmpire/ClassQuests,CompletedQuestBalancedGenCountFinished5</PathPrerequisite>
+    <SimulationDescriptorReference Name="EmpireImprovementBalancedGenCountFinished5" />
+  </EmpireImprovementDefinition>
 </Datatable>

@@ -9,10 +9,249 @@
     * Test to ensure it all starts on T1
     -->
 
-    <!-- ##### GALAXY GEN QUEST Constellation 0 Step 0: Determine position of Constellation 0 (Deficit, Surplus or Balance) #####-->
-    <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+    <QuestDefinition Name="GalaxyGenerationQuest_Planets-Finisher" Category="GalaxyGeneration" SubCategory="SystemNormalization">
       <!--============ TAGS ============-->
-      <Tags>Hidden, BeginTurn</Tags>
+      <Tags>Hidden,GalaxyGenerationQuest_Planets-Finisher</Tags>
+      <!--============ CONTEXT ============-->
+      <QuestContextSolo/>
+      <!--============ OCCURRENCE RULES ============-->
+      <RepetitionRules  NumberOfOccurrencesPerGame="99"
+                        NumberOfOccurrencesPerEmpire="99"
+                        NumberOfConcurrentInstances="99"/>
+        
+      <Vars>
+        <Var VarName="$ChosenEmpire">
+          <Select Index="0">
+            <From Source="$Empires"/>
+          </Select>
+        </Var>
+      </Vars>
+
+      <Prerequisites Target="$(Empires)" AnyTarget="true">
+        <InterpreterPrerequisite Flags="Prerequisite">Property(Context,@'ClassEmpire',SetupQuestFinished) ge 5 </InterpreterPrerequisite>
+      </Prerequisites>
+
+      <Steps>   
+          <Step Name="Step1">
+              <ObjectiveSet> 
+                <Objective Name="Objective_Fake">
+                  <Sequence>
+                    <Action_ChooseOutcome Name="Outcome1"/>
+                  </Sequence>
+                  <Outcome Name="Outcome1">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>StrategicResourceGenerationQuest</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                  </Outcome>
+                </Objective>
+              </ObjectiveSet>
+          </Step>
+      </Steps>
+
+    </QuestDefinition>
+
+    <QuestDefinition Name="GalaxyGenerationQuest_Planets-FinisherC0" Category="GalaxyGeneration" SubCategory="SystemNormalization">
+      <!--============ TAGS ============-->
+      <Tags>Hidden,GalaxyGenerationQuest_Planets-FinisherC0</Tags>
+      <!--============ CONTEXT ============-->
+      <QuestContextSolo/>
+      <!--============ OCCURRENCE RULES ============-->
+      <RepetitionRules  NumberOfOccurrencesPerGame="99"/>
+        
+      <Vars>
+      <Var VarName="$ChosenEmpire">
+          <Select Index="0">
+            <From Source="$Empires"/>
+          </Select>
+        </Var>
+      </Vars>
+
+      <Steps>   
+          <Step Name="Step1">
+              <ObjectiveSet> 
+                <Objective Name="Objective_Fake">
+                  <Sequence>
+                    <Action_ChooseOutcome Name="Outcome1"/>
+                  </Sequence>
+                  <Outcome Name="Outcome1">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-Finisher</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                  </Outcome>
+                </Objective>
+                <Reward Droplist="DroplistRewardQuestBalancedGenFinished1" Picks="1"/>
+              </ObjectiveSet>
+          </Step>
+      </Steps>
+
+    </QuestDefinition>
+
+    <QuestDefinition Name="GalaxyGenerationQuest_Planets-FinisherC1" Category="GalaxyGeneration" SubCategory="SystemNormalization">
+      <!--============ TAGS ============-->
+      <Tags>Hidden,GalaxyGenerationQuest_Planets-FinisherC1</Tags>
+      <!--============ CONTEXT ============-->
+      <QuestContextSolo/>
+      <!--============ OCCURRENCE RULES ============-->
+      <RepetitionRules  NumberOfOccurrencesPerGame="99"/>
+        
+      <Vars>
+      <Var VarName="$ChosenEmpire">
+          <Select Index="0">
+            <From Source="$Empires"/>
+          </Select>
+        </Var>
+      </Vars>
+
+      <Steps>   
+          <Step Name="Step1">
+              <ObjectiveSet> 
+                <Objective Name="Objective_Fake">
+                  <Sequence>
+                    <Action_ChooseOutcome Name="Outcome1"/>
+                  </Sequence>
+                  <Outcome Name="Outcome1">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-Finisher</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                  </Outcome>
+                </Objective>
+                <Reward Droplist="DroplistRewardQuestBalancedGenFinished2" Picks="1"/>
+              </ObjectiveSet>
+          </Step>
+      </Steps>
+
+    </QuestDefinition>
+
+    <QuestDefinition Name="GalaxyGenerationQuest_Planets-FinisherC2" Category="GalaxyGeneration" SubCategory="SystemNormalization">
+      <!--============ TAGS ============-->
+      <Tags>Hidden,GalaxyGenerationQuest_Planets-FinisherC2</Tags>
+      <!--============ CONTEXT ============-->
+      <QuestContextSolo/>
+      <!--============ OCCURRENCE RULES ============-->
+      <RepetitionRules  NumberOfOccurrencesPerGame="99"/>
+        
+      <Vars>
+      <Var VarName="$ChosenEmpire">
+          <Select Index="0">
+            <From Source="$Empires"/>
+          </Select>
+        </Var>
+      </Vars>
+
+      <Steps>   
+          <Step Name="Step1">
+              <ObjectiveSet> 
+                <Objective Name="Objective_Fake">
+                  <Sequence>
+                    <Action_ChooseOutcome Name="Outcome1"/>
+                  </Sequence>
+                  <Outcome Name="Outcome1">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-Finisher</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                  </Outcome>
+                </Objective>
+                <Reward Droplist="DroplistRewardQuestBalancedGenFinished3" Picks="1"/>
+              </ObjectiveSet>
+          </Step>
+      </Steps>
+
+    </QuestDefinition>
+
+    <QuestDefinition Name="GalaxyGenerationQuest_Planets-FinisherC3" Category="GalaxyGeneration" SubCategory="SystemNormalization">
+      <!--============ TAGS ============-->
+      <Tags>Hidden,GalaxyGenerationQuest_Planets-FinisherC3</Tags>
+      <!--============ CONTEXT ============-->
+      <QuestContextSolo/>
+      <!--============ OCCURRENCE RULES ============-->
+      <RepetitionRules  NumberOfOccurrencesPerGame="99"/>
+        
+      <Vars>
+      <Var VarName="$ChosenEmpire">
+          <Select Index="0">
+            <From Source="$Empires"/>
+          </Select>
+        </Var>
+      </Vars>
+
+      <Steps>   
+          <Step Name="Step1">
+              <ObjectiveSet> 
+                <Objective Name="Objective_Fake">
+                  <Sequence>
+                    <Action_ChooseOutcome Name="Outcome1"/>
+                  </Sequence>
+                  <Outcome Name="Outcome1">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-Finisher</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                  </Outcome>
+                </Objective>
+                <Reward Droplist="DroplistRewardQuestBalancedGenFinished4" Picks="1"/>
+              </ObjectiveSet>
+          </Step>
+      </Steps>
+
+    </QuestDefinition>
+
+    <QuestDefinition Name="GalaxyGenerationQuest_Planets-FinisherC4" Category="GalaxyGeneration" SubCategory="SystemNormalization">
+      <!--============ TAGS ============-->
+      <Tags>Hidden,GalaxyGenerationQuest_Planets-FinisherC4</Tags>
+      <!--============ CONTEXT ============-->
+      <QuestContextSolo/>
+      <!--============ OCCURRENCE RULES ============-->
+      <RepetitionRules  NumberOfOccurrencesPerGame="99"/>
+        
+      <Vars>
+      <Var VarName="$ChosenEmpire">
+          <Select Index="0">
+            <From Source="$Empires"/>
+          </Select>
+        </Var>
+      </Vars>
+
+      <Steps>   
+          <Step Name="Step1">
+              <ObjectiveSet> 
+                <Objective Name="Objective_Fake">
+                  <Sequence>
+                    <Action_ChooseOutcome Name="Outcome1"/>
+                  </Sequence>
+                  <Outcome Name="Outcome1">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-Finisher</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                  </Outcome>
+                </Objective>
+                <Reward Droplist="DroplistRewardQuestBalancedGenFinished5" Picks="1"/>
+              </ObjectiveSet>
+          </Step>
+      </Steps>
+
+    </QuestDefinition>
+
+    <!-- ##### GALAXY GEN QUEST Constellation 0 Step 0: Determine position of Constellation 0 (Deficit, Surplus or Balance) #####-->
+    <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" CheckRandom="false" MinimumTurn="0">
+      <!--============ TAGS ============-->
+      <Tags>Hidden,BeginTurn</Tags>
       <!--============ CONTEXT ============-->
       <QuestContextSolo/>
       <!--============ OCCURRENCE RULES ============-->
@@ -61,8 +300,8 @@
               <Where>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">WorldAcademy</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-                <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+                <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
               </Where>
             </From>
           </Count>
@@ -143,7 +382,7 @@
                   <Outcome Name="Outcome0">
                     <Triggers Weight="1">
                       <QuestTrigger>
-                        <Tags>StrategicResourceGenerationQuest</Tags>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC0</Tags>
                         <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
                       </QuestTrigger>
                     </Triggers>
@@ -187,9 +426,9 @@
   </QuestDefinition>
 
   <!-- ##### GALAXY GEN QUEST Constellation 0 Step 1 Version 0: Rectify Deficit #####-->
-  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization">
     <!--============ TAGS ============-->
-    <Tags>Hidden, GalaxyGenerationQuest_Planets-C0S1v0</Tags>
+    <Tags>Hidden,GalaxyGenerationQuest_Planets-C0S1v0</Tags>
     <!--============ CONTEXT ============-->
     <QuestContextSolo/>
     <!--============ OCCURRENCE RULES ============-->
@@ -237,8 +476,8 @@
           <From Source="$Constellation0.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
             </Where>
           </From>
         </Count>
@@ -256,10 +495,10 @@
       <Var VarName="$SystemsToUpgrade">
         <From Source="$Constellation0.$StarSystems">
             <Where>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-                <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+                <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
             </Where>
             <OrderBy>                        
                 <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -298,7 +537,7 @@
                 <Outcome Name="Outcome0">
                   <Triggers Weight="1">
                     <QuestTrigger>
-                      <Tags>StrategicResourceGenerationQuest</Tags>
+                      <Tags>GalaxyGenerationQuest_Planets-FinisherC0</Tags>
                       <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
                     </QuestTrigger>
                   </Triggers>
@@ -310,9 +549,9 @@
   </QuestDefinition>
 
   <!-- ##### GALAXY GEN QUEST Constellation 0 Step 1 Version 1: Rectify Surplus #####-->
-  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization">
     <!--============ TAGS ============-->
-    <Tags>Hidden, GalaxyGenerationQuest_Planets-C0S1v1</Tags>
+    <Tags>Hidden,GalaxyGenerationQuest_Planets-C0S1v1</Tags>
     <!--============ CONTEXT ============-->
     <QuestContextSolo/>
     <!--============ OCCURRENCE RULES ============-->
@@ -360,8 +599,8 @@
           <From Source="$Constellation0.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
             </Where>
           </From>
         </Count>
@@ -379,10 +618,10 @@
       <Var VarName="$SystemsToDowngrade">
         <From Source="$Constellation0.$StarSystems">
             <Where>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-                <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+                <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
             </Where>
             <OrderBy>                        
                 <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -421,7 +660,7 @@
                   <Outcome Name="Outcome0">
                     <Triggers Weight="1">
                       <QuestTrigger>
-                        <Tags>StrategicResourceGenerationQuest</Tags>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC0</Tags>
                         <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
                       </QuestTrigger>
                     </Triggers>
@@ -433,9 +672,9 @@
   </QuestDefinition>
 
   <!-- ##### GALAXY GEN QUEST Constellation 0 Step 1 Version 2: Rectify Large Deficit #####-->
-  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization">
     <!--============ TAGS ============-->
-    <Tags>Hidden, GalaxyGenerationQuest_Planets-C0S1v2</Tags>
+    <Tags>Hidden,GalaxyGenerationQuest_Planets-C0S1v2</Tags>
     <!--============ CONTEXT ============-->
     <QuestContextSolo/>
     <!--============ OCCURRENCE RULES ============-->
@@ -483,8 +722,8 @@
           <From Source="$Constellation0.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
             </Where>
           </From>
         </Count>
@@ -502,10 +741,10 @@
       <Var VarName="$SystemsToUpgrade">
         <From Source="$Constellation0.$StarSystems">
             <Where>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-                <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+                <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
             </Where>
             <OrderBy>                        
                 <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -548,7 +787,7 @@
                 <Outcome Name="Outcome0">
                   <Triggers Weight="1">
                     <QuestTrigger>
-                      <Tags>StrategicResourceGenerationQuest</Tags>
+                      <Tags>GalaxyGenerationQuest_Planets-FinisherC0</Tags>
                       <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
                     </QuestTrigger>
                   </Triggers>
@@ -560,9 +799,9 @@
   </QuestDefinition>
 
   <!-- ##### GALAXY GEN QUEST Constellation 0 Step 1 Version 3: Rectify Large Surplus #####-->
-  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+  <QuestDefinition Name="GalaxyGenerationQuest_Planets-C0S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization">
     <!--============ TAGS ============-->
-    <Tags>Hidden, GalaxyGenerationQuest_Planets-C0S1v3</Tags>
+    <Tags>Hidden,GalaxyGenerationQuest_Planets-C0S1v3</Tags>
     <!--============ CONTEXT ============-->
     <QuestContextSolo/>
     <!--============ OCCURRENCE RULES ============-->
@@ -610,8 +849,8 @@
           <From Source="$Constellation0.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
             </Where>
           </From>
         </Count>
@@ -629,10 +868,10 @@
       <Var VarName="$SystemsToDowngrade">
         <From Source="$Constellation0.$StarSystems">
             <Where>
-                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+                <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
                 <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-                <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+                <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
             </Where>
             <OrderBy>                        
                 <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -675,7 +914,7 @@
                   <Outcome Name="Outcome0">
                     <Triggers Weight="1">
                       <QuestTrigger>
-                        <Tags>StrategicResourceGenerationQuest</Tags>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC0</Tags>
                         <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
                       </QuestTrigger>
                     </Triggers>
@@ -687,9 +926,9 @@
   </QuestDefinition>
 
    <!-- ##### GALAXY GEN QUEST Constellation 1 Step 0: Determine position of Constellation 1 (Deficit, Surplus or Balance) #####-->
-   <QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+   <QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" CheckRandom="false" MinimumTurn="0">
     <!--============ TAGS ============-->
-    <Tags>Hidden, BeginTurn</Tags>
+    <Tags>Hidden,BeginTurn</Tags>
     <!--============ CONTEXT ============-->
     <QuestContextSolo/>
     <!--============ OCCURRENCE RULES ============-->
@@ -751,8 +990,8 @@
           <From Source="$TargetConstellation.$StarSystems">
             <Where>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
             </Where>
           </From>
         </Count>
@@ -827,9 +1066,17 @@
                         <Input_Expression VarName="$Constellation_5PlanetBalancedBoolean"/>
                       </Condition_CheckInterpreter>
                     </Decorator_HeroAssigned>
-                    <Action_Fail/>
+                    <Action_ChooseOutcome Name="Outcome0"/>
                   </Sequence>
                 </Parallel>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC1</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
                 <Outcome Name="Outcome1">
                   <Triggers Weight="1">
                     <QuestTrigger>
@@ -870,9 +1117,9 @@
 
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 0: Rectify Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C1S1v0</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C1S1v0</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -934,8 +1181,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -953,10 +1200,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -990,7 +1237,16 @@
                   <Input_DefinitionName VarName="$DefinitionName1"/>
                   <Input_StarSystemNode VarName="$SystemToUpgradeA"/>
                 </Action_ApplyStarSystemDefinition>
-              </Sequence>
+              <Action_ChooseOutcome Name="Outcome0"/>
+                </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC1</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -998,9 +1254,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 1: Rectify Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C1S1v1</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C1S1v1</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -1062,8 +1318,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -1081,10 +1337,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -1118,7 +1374,16 @@
                     <Input_DefinitionName VarName="$DefinitionName99"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeA"/>
                   </Action_ApplyStarSystemDefinition>
+                <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC1</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -1126,9 +1391,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 2: Rectify Large Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C1S1v2</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C1S1v2</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -1190,8 +1455,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -1209,10 +1474,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -1250,7 +1515,16 @@
                   <Input_DefinitionName VarName="$DefinitionName2"/>
                   <Input_StarSystemNode VarName="$SystemToUpgradeB"/>
                 </Action_ApplyStarSystemDefinition>
-              </Sequence>
+              <Action_ChooseOutcome Name="Outcome0"/>
+                </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC1</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -1258,9 +1532,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 3: Rectify Large Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C1S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C1S1v3</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C1S1v3</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -1322,8 +1596,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -1341,10 +1615,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -1382,7 +1656,16 @@
                     <Input_DefinitionName VarName="$DefinitionName98"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeB"/>
                   </Action_ApplyStarSystemDefinition>
+                <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC1</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -1390,9 +1673,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 0: Determine position of Constellation 1 (Deficit, Surplus or Balance) #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" CheckRandom="false" MinimumTurn="0">
   <!--============ TAGS ============-->
-  <Tags>Hidden, BeginTurn</Tags>
+  <Tags>Hidden,BeginTurn</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -1454,8 +1737,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -1530,9 +1813,17 @@
                       <Input_Expression VarName="$Constellation_5PlanetBalancedBoolean"/>
                     </Condition_CheckInterpreter>
                   </Decorator_HeroAssigned>
-                  <Action_Fail/>
-                </Sequence>
-              </Parallel>
+                  <Action_ChooseOutcome Name="Outcome0"/>
+                  </Sequence>
+                </Parallel>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC2</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
               <Outcome Name="Outcome1">
                 <Triggers Weight="1">
                   <QuestTrigger>
@@ -1573,9 +1864,9 @@
 
 
 <!-- ##### GALAXY GEN QUEST Constellation 2 Step 1 Version 0: Rectify Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C2S1v0</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C2S1v0</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -1637,8 +1928,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -1656,10 +1947,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -1693,7 +1984,16 @@
                   <Input_DefinitionName VarName="$DefinitionName1"/>
                   <Input_StarSystemNode VarName="$SystemToUpgradeA"/>
                 </Action_ApplyStarSystemDefinition>
-              </Sequence>
+              <Action_ChooseOutcome Name="Outcome0"/>
+                </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC2</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -1701,9 +2001,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 1: Rectify Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C2S1v1</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C2S1v1</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -1765,8 +2065,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -1784,10 +2084,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -1821,7 +2121,16 @@
                     <Input_DefinitionName VarName="$DefinitionName99"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeA"/>
                   </Action_ApplyStarSystemDefinition>
+                <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC2</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -1829,9 +2138,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 2: Rectify Large Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C2S1v2</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C2S1v2</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -1893,8 +2202,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -1912,10 +2221,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -1953,7 +2262,16 @@
                   <Input_DefinitionName VarName="$DefinitionName2"/>
                   <Input_StarSystemNode VarName="$SystemToUpgradeB"/>
                 </Action_ApplyStarSystemDefinition>
-              </Sequence>
+              <Action_ChooseOutcome Name="Outcome0"/>
+                </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC2</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -1961,9 +2279,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 3: Rectify Large Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C2S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C2S1v3</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C2S1v3</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -2025,8 +2343,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -2044,10 +2362,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -2085,7 +2403,16 @@
                     <Input_DefinitionName VarName="$DefinitionName98"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeB"/>
                   </Action_ApplyStarSystemDefinition>
+                <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC2</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -2093,9 +2420,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 0: Determine position of Constellation 1 (Deficit, Surplus or Balance) #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" CheckRandom="false" MinimumTurn="0">
   <!--============ TAGS ============-->
-  <Tags>Hidden, BeginTurn</Tags>
+  <Tags>Hidden,BeginTurn</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -2157,8 +2484,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -2233,9 +2560,17 @@
                       <Input_Expression VarName="$Constellation_5PlanetBalancedBoolean"/>
                     </Condition_CheckInterpreter>
                   </Decorator_HeroAssigned>
-                  <Action_Fail/>
-                </Sequence>
-              </Parallel>
+                  <Action_ChooseOutcome Name="Outcome0"/>
+                  </Sequence>
+                </Parallel>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC3</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
               <Outcome Name="Outcome1">
                 <Triggers Weight="1">
                   <QuestTrigger>
@@ -2277,9 +2612,9 @@
 
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 0: Rectify Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C3S1v0</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C3S1v0</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -2341,8 +2676,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -2360,10 +2695,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -2397,7 +2732,16 @@
                   <Input_DefinitionName VarName="$DefinitionName1"/>
                   <Input_StarSystemNode VarName="$SystemToUpgradeA"/>
                 </Action_ApplyStarSystemDefinition>
-              </Sequence>
+              <Action_ChooseOutcome Name="Outcome0"/>
+                </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC3</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -2405,9 +2749,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 1: Rectify Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C3S1v1</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C3S1v1</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -2469,8 +2813,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -2488,10 +2832,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -2525,7 +2869,16 @@
                     <Input_DefinitionName VarName="$DefinitionName99"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeA"/>
                   </Action_ApplyStarSystemDefinition>
+                <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC3</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -2533,9 +2886,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 2: Rectify Large Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C3S1v2</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C3S1v2</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -2597,8 +2950,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -2616,10 +2969,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -2657,7 +3010,16 @@
                   <Input_DefinitionName VarName="$DefinitionName2"/>
                   <Input_StarSystemNode VarName="$SystemToUpgradeB"/>
                 </Action_ApplyStarSystemDefinition>
-              </Sequence>
+              <Action_ChooseOutcome Name="Outcome0"/>
+                </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC3</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -2665,9 +3027,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 3: Rectify Large Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C3S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C3S1v3</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C3S1v3</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -2729,8 +3091,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -2748,10 +3110,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -2789,7 +3151,16 @@
                     <Input_DefinitionName VarName="$DefinitionName98"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeB"/>
                   </Action_ApplyStarSystemDefinition>
+                <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC3</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -2797,9 +3168,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 0: Determine position of Constellation 1 (Deficit, Surplus or Balance) #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" CheckRandom="false" MinimumTurn="0">
   <!--============ TAGS ============-->
-  <Tags>Hidden, BeginTurn</Tags>
+  <Tags>Hidden,BeginTurn</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -2861,8 +3232,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -2937,9 +3308,17 @@
                       <Input_Expression VarName="$Constellation_5PlanetBalancedBoolean"/>
                     </Condition_CheckInterpreter>
                   </Decorator_HeroAssigned>
-                  <Action_Fail/>
-                </Sequence>
-              </Parallel>
+                  <Action_ChooseOutcome Name="Outcome0"/>
+                  </Sequence>
+                </Parallel>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC4</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
               <Outcome Name="Outcome1">
                 <Triggers Weight="1">
                   <QuestTrigger>
@@ -2980,9 +3359,9 @@
 
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 0: Rectify Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v0" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C4S1v0</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C4S1v0</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -3044,8 +3423,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -3063,10 +3442,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -3108,9 +3487,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 1: Rectify Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v1" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C4S1v1</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C4S1v1</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -3172,8 +3551,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -3191,10 +3570,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -3228,7 +3607,16 @@
                     <Input_DefinitionName VarName="$DefinitionName99"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeA"/>
                   </Action_ApplyStarSystemDefinition>
+                <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC4</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -3236,9 +3624,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 2: Rectify Large Deficit #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v2" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C4S1v2</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C4S1v2</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -3300,8 +3688,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -3319,10 +3707,10 @@
     <Var VarName="$SystemsToUpgrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') le 3</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -3360,7 +3748,16 @@
                   <Input_DefinitionName VarName="$DefinitionName2"/>
                   <Input_StarSystemNode VarName="$SystemToUpgradeB"/>
                 </Action_ApplyStarSystemDefinition>
-              </Sequence>
+                <Action_ChooseOutcome Name="Outcome0"/>
+                </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC4</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>
@@ -3368,9 +3765,9 @@
 </QuestDefinition>
 
 <!-- ##### GALAXY GEN QUEST Constellation 1 Step 1 Version 3: Rectify Large Surplus #####-->
-<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization" IsInstant="true" TriggeringProbability="1" CheckRandom="true" MinimumTurn="0">
+<QuestDefinition Name="GalaxyGenerationQuest_Planets-C4S1v3" Category="GalaxyGeneration" SubCategory="SystemNormalization">
   <!--============ TAGS ============-->
-  <Tags>Hidden, GalaxyGenerationQuest_Planets-C4S1v3</Tags>
+  <Tags>Hidden,GalaxyGenerationQuest_Planets-C4S1v3</Tags>
   <!--============ CONTEXT ============-->
   <QuestContextSolo/>
   <!--============ OCCURRENCE RULES ============-->
@@ -3432,8 +3829,8 @@
         <From Source="$TargetConstellation.$StarSystems">
           <Where>
             <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,IsolatedNode</PathPrerequisite>
-            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite> 
-            <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+            <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite> 
+            <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
         </From>
       </Count>
@@ -3451,10 +3848,10 @@
     <Var VarName="$SystemsToDowngrade">
       <From Source="$TargetConstellation.$StarSystems">
           <Where>
-              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem, QuestNode</PathPrerequisite>
+              <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,QuestNode</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,HomeSystem</PathPrerequisite>
               <PathPrerequisite Inverted="true" Flags="Prerequisite">ClassStarSystem,ColonizedStarSystemStateOutpost</PathPrerequisite>
-              <InterpreterPrerequisite Flags="Prerequisite">Count(Context, @'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
+              <InterpreterPrerequisite Flags="Prerequisite">Count(Context,@'ClassStarSystem/ClassPlanet') ge 5</InterpreterPrerequisite>            
           </Where>
           <OrderBy>                        
               <SortSystemByDistance OriginVarName="$AcademySystem" SortBy="Nearest" MinimumDistance="1" MaximumDistance="9999" MinimumCandidateCount="2"/>
@@ -3492,7 +3889,16 @@
                     <Input_DefinitionName VarName="$DefinitionName98"/>
                     <Input_StarSystemNode VarName="$SystemToDowngradeB"/>
                   </Action_ApplyStarSystemDefinition>
+                  <Action_ChooseOutcome Name="Outcome0"/>
                 </Sequence>
+                <Outcome Name="Outcome0">
+                    <Triggers Weight="1">
+                      <QuestTrigger>
+                        <Tags>GalaxyGenerationQuest_Planets-FinisherC4</Tags>
+                        <QuestContextSolo ParticipantsVarName="$ChosenEmpire"/>
+                      </QuestTrigger>
+                    </Triggers>
+                </Outcome>
             </Objective>
           </ObjectiveSet>
       </Step>

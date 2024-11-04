@@ -722,4 +722,22 @@
     <Modifier TargetProperty="Multiplier" Value="0.25"  Operation="Addition" Priority="2" Path="ClassEmpire//ClassGarrison/ClassShip,ShipRoleHero//ClassModule" TooltipHidden="true"/>
     <Modifier TargetProperty="MaximumHealth" Value="500"  Operation="Addition" Path="ClassEmpire//ClassGarrison/ClassShip,ShipRoleHero/ClassSectionCore" TooltipHidden="true"/>
   </SimulationDescriptor>
+
+
+  <!--Balanced Gen Quest stuff-->
+  <SimulationDescriptor Name="EmpireImprovementBalancedGenCountFinished1" Type="EmpireImprovement">
+    <Modifier TargetProperty="SetupQuestFinished" Value="1"  Operation="Addition" Path="ClassEmpire"/>
+  </SimulationDescriptor>
+  <SimulationDescriptor Name="EmpireImprovementBalancedGenCountFinished2" Type="EmpireImprovement">
+    <Modifier TargetProperty="SetupQuestFinished" Value="1"  Operation="Addition" Path="ClassEmpire"/>
+  </SimulationDescriptor>
+  <SimulationDescriptor Name="EmpireImprovementBalancedGenCountFinished3" Type="EmpireImprovement">
+    <Modifier TargetProperty="SetupQuestFinished" Value="1"  Operation="Addition" Path="ClassEmpire"/>
+  </SimulationDescriptor>
+  <SimulationDescriptor Name="EmpireImprovementBalancedGenCountFinished4" Type="EmpireImprovement">
+    <Modifier TargetProperty="SetupQuestFinished" Value="1"  Operation="Addition" Path="ClassEmpire"/>
+  </SimulationDescriptor>
+  <SimulationDescriptor Name="EmpireImprovementBalancedGenCountFinished5" Type="EmpireImprovement">
+    <Modifier TargetProperty="SetupQuestFinished" Value="1"  Operation="Addition" Path="ClassEmpire"/>
+  </SimulationDescriptor>
 </Datatable>

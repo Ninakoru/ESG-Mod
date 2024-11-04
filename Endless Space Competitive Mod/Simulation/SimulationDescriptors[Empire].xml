@@ -28,6 +28,10 @@
 		<Property Name="MilitaristWarnings" 			  		BaseValue="0" MaxValue="1" MinValue="0"/>
 		<Property Name="TurnOneBoolean" 			  			BaseValue="-2" MaxValue="0" MinValue="Negative"/>
 
+		<!--Quest setup stuff-->
+		<Property Name="SetupQuestFinished" 			  			BaseValue="0" MinValue="0"/>
+		
+
 		<!--Automatons-->
 		<!--Automatons-->
 		<!--Formula is : 33% - ((SystemCount - (OvercolCap / 2)) / (GalaxyNodes * 0.33)) -->
